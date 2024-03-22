@@ -21,3 +21,6 @@
   background-color: white;
   overflow: hidden;
 }
+.panel.active {
+  display: block;
+}

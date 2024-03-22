@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Load the PDF file using a library or framework
     // For example, you can use PDF.js, ViewerJS, or similar libraries
     // Here's an example using PDF.js:
-    const pdfPath = 'path/to/your/pdf/file.pdf';
+    const pdfPath = 'Pain of every student.pdf';
     const pdfViewer = document.getElementById('pdf-viewer');
     const pdfjsLib = window['pdfjs-dist/build/pdf'];
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';

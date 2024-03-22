@@ -10,11 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Add event listener to Surah Yaseen heading for toggle effect
     document.getElementById('surah-yaseen-heading').addEventListener('click', function() {
-        var panel = document.getElementById('surah-yaseen-panel');
-        if (panel.style.display === 'block') {
-            panel.style.display = 'none';
-        } else {
-            panel.style.display = 'block';
-        }
+        document.getElementById('surah-yaseen-panel').classList.toggle('active');
     });
 });

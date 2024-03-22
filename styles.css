@@ -1,28 +1,49 @@
-/* Your CSS styles */
-.surah-list {
-    max-width: 600px;
-    margin: 0 auto;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.quran-surah {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-li {
-    margin-bottom: 10px;
+.quran-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-a {
-    display: block;
-    padding: 10px;
-    background-color: #f0f0f0;
-    text-decoration: none;
-    color: #333;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.quran-content p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 10px;
 }
 
-a:hover {
-    background-color: #ccc;
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.speed-selector {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+label {
+  margin-right: 10px;
 }

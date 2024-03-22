@@ -1,4 +1,4 @@
-let surahs = [];
+let surahs = []; 
 let currentSurahIndex = 0;
 const quranContent = document.querySelector('.quran-content');
 const playButton = document.getElementById('playButton');

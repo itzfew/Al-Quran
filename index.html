@@ -9,6 +9,7 @@
 <body>
   <div class="quran-surah">
     <h1 class="quran-title">Quran</h1>
+    <p class="text-mention">Surahs loaded from <code>surah1.txt</code>, <code>surah2.txt</code>, etc.</p>
     <div class="quran-content">
       <!-- Surah content will be dynamically inserted here -->
     </div>
@@ -28,5 +29,10 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    window.onload = function() {
+      loadSurahs();
+    };
+  </script>
 </body>
 </html>

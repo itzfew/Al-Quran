@@ -1,25 +1,24 @@
-const surahs = [
-  "In the name of God, the Gracious, the Merciful.",
-  "Praise be to God, Lord of the Worlds.",
-  "The Most Gracious, the Most Merciful.",
-  "Master of the Day of Judgment.",
-  "It is You we worship, and upon You we call for help.",
-  "Guide us to the straight path.",
-  "The path of those You have blessed, not of those against whom there is anger, nor of those who are misguided."
-];
-
+let surahs = [];
 let currentSurahIndex = 0;
 const quranContent = document.querySelector('.quran-content');
 const playButton = document.getElementById('playButton');
 let isPlaying = false;
 let scrollSpeed = 1; // Default scroll speed
+const surahFiles = ['surah1.txt', 'surah2.txt', 'surah3.txt']; // Add more file names as needed
 
+// Function to load Surah from text file
+function loadSurah(filename) {
+  return fetch(filename)
+    .then(response => response.text())
+    .catch(error => console.error('Error fetching Surah:', error));
+}
+
+// Function to display current Surah
 function displaySurah(index) {
   quranContent.innerHTML = `<p>${surahs[index]}</p>`;
 }
 
-displaySurah(currentSurahIndex);
-
+// Function to scroll to bottom
 function scrollToBottom() {
   const element = quranContent;
   const scrollHeight = element.scrollHeight;
@@ -38,6 +37,13 @@ function scrollToBottom() {
     playButton.textContent = 'Play';
   }
 }
+
+// Load all Surahs
+Promise.all(surahFiles.map(file => loadSurah(file)))
+  .then(data => {
+    surahs = data;
+    displaySurah(currentSurahIndex);
+  });
 
 document.getElementById('prevButton').addEventListener('click', () => {
   if (currentSurahIndex > 0) {

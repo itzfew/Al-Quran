@@ -1,0 +1,68 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+.scroll-indicator{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: rgba(0, 0, 0, .12);
+    z-index: 100;
+}
+.bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background-color: #2ca4ab;
+    z-index: 100;
+    animation: scroll 5s linear infinite;
+    width: 0;
+}
+body.dark header{
+    background-color: #000;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+/* filter color h2 */
+header h2{
+    /* filter: hue-rotate(45deg); */
+    /* color: #00000049; */
+    color: #2ca4ab;
+}
+body.dark header h2, body.dark .log i{
+    color: #fff;
+}
+
+header button{
+    background-color:#fff ;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #00000049;
+
+}
+
+.log{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.log i{
+    font-size: 20px;
+    margin-right: 10px;
+    color: #000000;
+}
+
+/* responsive  */

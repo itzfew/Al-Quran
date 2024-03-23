@@ -62,46 +62,5 @@
   align-items: center;
   }</style>
   
- <script type="text/javascript">document.addEventListener("DOMContentLoaded", function() {
- // Function to load Surah content from file
- function loadSurahContent(filename) {
- fetch(filename)
- .then(response => response.text())
- .then(data => {
- document.querySelector('.quran-content').innerHTML = data;
- })
- .catch(error => {
- console.error('Error loading Surah content:', error);
- });
- }
- 
- // Array to store Surah file names
- var surahFiles = ["surah1.txt", "surah2.txt", "surah3.txt"]; // Add more file names as needed
- 
- // Variable to keep track of the current Surah index
- var currentSurahIndex = 0;
- 
- // Function to navigate to the previous Surah
- function goToPreviousSurah() {
- if (currentSurahIndex > 0) {
- currentSurahIndex--;
- loadSurahContent(surahFiles[currentSurahIndex]);
- }
- }
- 
- // Function to navigate to the next Surah
- function goToNextSurah() {
- if (currentSurahIndex < surahFiles.length - 1) {
- currentSurahIndex++;
- loadSurahContent(surahFiles[currentSurahIndex]);
- }
- }
- 
- // Add event listeners to buttons
- document.getElementById('previousButton').addEventListener('click', goToPreviousSurah);
- document.getElementById('nextButton').addEventListener('click', goToNextSurah);
- 
- // Load the first Surah initially
- loadSurahContent(surahFiles[currentSurahIndex]);
- });</script>
+</body>
 </html>

@@ -1,0 +1,48 @@
+export function createPagination() {
+    const pagination = document.querySelector('.pagination');
+    const pageNumbers = [];
+    const currentPage = 1;
+    const rows = 10;
+
+    for (let i = 1; i <= Math.ceil(surahs.length / rows); i++) {
+        pageNumbers.push(i);
+    }
+
+    pagination.innerHTML = pageNumbers.map(number => {
+        return `<li><a href="#" class="page-link" data-page="${number}">${number}</a></li>`
+    }).join(' ');
+
+    const pageLink = document.querySelectorAll('.page-link');
+    pageLink.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentPage = e.target.dataset.page;
+            displaySurahs();
+        })
+    })
+};
+// createPagination(); // call the function to render initial list of pages
+
+
+export function createPagination(){
+    const pagination = document.querySelector('.pagination');
+    const pageNumbers = [];
+    const totalPages = 10;
+    for(let i = 1; i <= totalPages; i++){
+        pageNumbers.push(i);
+    }
+    pagination.innerHTML = pageNumbers.map((item)=>{
+        return `
+        <li class="page-item"><a class="page-link" href="index.html?page=${item}">${item}</a></li>
+        `
+    }).join(' ');
+
+    // add active class to the current page
+    const currentPage = new URLSearchParams(window.location.search).get('page');
+
+    // show data every page in page link  
+  
+
+    
+
+}

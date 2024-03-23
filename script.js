@@ -4,7 +4,30 @@ const quranContent = document.querySelector('.quran-content');
 const playButton = document.getElementById('playButton');
 let isPlaying = false;
 let scrollSpeed = 1; // Default scroll speed
-const surahFiles = ['surah-yaseen.txt', 'surah-yaseen.txt', 'surah3.txt']; // Add more file names as needed
+const surahFiles =
+ [
+  'Surah/01.txt',
+  'Surah/02.txt',
+  'Surah/03.txt',
+  'Surah/04.txt',
+  'Surah/05.txt',
+  'Surah/06.txt',
+  'Surah/07.txt',
+  'Surah/08.txt',
+  'Surah/09.txt',
+  'Surah/10.txt',
+  'Surah/11.txt',
+  'Surah/12.txt',
+  'Surah/13.txt',
+  'Surah/14.txt',
+  'Surah/15.txt',
+  'Surah/16.txt',
+  'Surah/17.txt',
+  'Surah/18.txt',
+  'Surah/19.txt',
+  'Surah/20.txt'
+];
+// Add more file names as needed
 
 // Function to load Surah from text file
 function loadSurah(filename) {

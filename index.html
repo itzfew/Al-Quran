@@ -3,35 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quran Surahs</title>
+  <title>Quran Karim Web App</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="quran-surah">
+  <header>
+    <h1>Quran Karim</h1>
+  </header>
+  <main class="quran-surah">
     <h1 class="quran-title">Quran</h1>
-       <div class="quran-content">
+    <div class="quran-content">
       <!-- Surah content will be dynamically inserted here -->
     </div>
-    <div class="navigation-buttons">
-      <button id="prevButton">Previous</button>
-      <button id="playButton">Play</button>
-      <button id="nextButton">Next</button>
-    </div>
-    <div class="speed-selector">
-      <label for="speedSelect">Select Speed:</label>
-      <select id="speedSelect">
-        <option value="1">1X</option>
-        <option value="1.5">1.5X</option>
-        <option value="2">2X</option>
-      </select>
-    </div>
-  </div>
-
+  </main>
+  <footer>
+    <button id="previousButton">Previous Surah</button>
+    <button id="playButton">Play Audio</button>
+    <button id="nextButton">Next Surah</button>
+  </footer>
   <script src="script.js"></script>
-  <script>
-    window.onload = function() {
-      loadSurahs();
-    };
-  </script>
 </body>
+</html>
+
+  <style type="text/css">body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  }
+  
+  header, footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  }
+  
+  header {
+  top: 0;
+  }
+  
+  footer {
+  bottom: 0;
+  }
+  
+  main {
+  padding: 60px 10px; /* Adjust padding based on header and footer height */
+  }
+  
+  button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  }
+  
+  footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }</style>
+  
+ <script type="text/javascript">document.addEventListener("DOMContentLoaded", function() {
+ // Function to load Surah content from file
+ function loadSurahContent(filename) {
+ fetch(filename)
+ .then(response => response.text())
+ .then(data => {
+ document.querySelector('.quran-content').innerHTML = data;
+ })
+ .catch(error => {
+ console.error('Error loading Surah content:', error);
+ });
+ }
+ 
+ // Array to store Surah file names
+ var surahFiles = ["surah1.txt", "surah2.txt", "surah3.txt"]; // Add more file names as needed
+ 
+ // Variable to keep track of the current Surah index
+ var currentSurahIndex = 0;
+ 
+ // Function to navigate to the previous Surah
+ function goToPreviousSurah() {
+ if (currentSurahIndex > 0) {
+ currentSurahIndex--;
+ loadSurahContent(surahFiles[currentSurahIndex]);
+ }
+ }
+ 
+ // Function to navigate to the next Surah
+ function goToNextSurah() {
+ if (currentSurahIndex < surahFiles.length - 1) {
+ currentSurahIndex++;
+ loadSurahContent(surahFiles[currentSurahIndex]);
+ }
+ }
+ 
+ // Add event listeners to buttons
+ document.getElementById('previousButton').addEventListener('click', goToPreviousSurah);
+ document.getElementById('nextButton').addEventListener('click', goToNextSurah);
+ 
+ // Load the first Surah initially
+ loadSurahContent(surahFiles[currentSurahIndex]);
+ });</script>
 </html>
